@@ -9,7 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.util.concurrent.TimeUnit;
 
-public class Hook {
+public class Hooks {
 
     @Before //it must be coming from cucumber.java
     public void setUp() {
@@ -29,6 +29,6 @@ public class Hook {
             System.out.println("Test is completed!");
         }
         System.out.println("##### THE END #####");
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 }
