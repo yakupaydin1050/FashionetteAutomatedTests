@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "de/fashionette/step_definitions",
         dryRun = false,
-        tags= "@scenario03"
+        tags= "@scenario01"
 )
 
 

@@ -31,7 +31,7 @@ public class CartPageDefs {
         //System.out.println("actualURL = " + actualURL);
         Assert.assertTrue(actualURL.contains(str));
     }
-    
+
     @Then("verify that selected product appeared in the user cart")
     public void verifyThatSelectedProductAppearedInTheUserCart() {
 
