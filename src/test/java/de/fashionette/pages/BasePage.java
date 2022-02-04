@@ -14,6 +14,13 @@ public abstract class BasePage {
     @FindBy (xpath = "//img[@alt='fashionette']")
     public WebElement fashionetteLogo;
 
+    @FindBy(xpath = "//*[@class='header__cart-icon']")
+    public WebElement cartIcon;
+
+    public void visitCart(){
+        cartIcon.click();
+    }
+
 }
 
 

@@ -10,30 +10,25 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 import java.util.Random;
 
-public class ProductsPage extends BasePage{
+public class ProductsPage extends BasePage {
 
-    public ProductsPage(){
-        PageFactory.initElements(Driver.get(),this);
+    public ProductsPage() {
+        PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy (xpath = "//div[@class='signpost--wrap'][2]")
+    @FindBy(xpath = "//div[@class='signpost--wrap'][2]")
     public WebElement selectMainProduct;
 
-    @FindBy (xpath =  "(//*[@class='product--list__item__image'])[1]")
+    @FindBy(xpath = "(//*[@class='product--list__item__image'])[1]")
     public WebElement selectProduct;
 
 
     public void selectProduct() {
-       selectMainProduct.click();
+        selectMainProduct.click();
         BrowserUtils.waitFor(3);
         selectProduct.click();
     }
 
-
-   // @FindBy (xpath = "//*[@class='product-details__description__name text__weight--normal']")
-    //public WebElement selectedProduct;
-
-    //public String selectedProductText = selectedProduct.getText();
 
 
 }

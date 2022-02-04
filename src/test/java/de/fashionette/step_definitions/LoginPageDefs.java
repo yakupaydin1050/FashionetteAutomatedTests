@@ -5,32 +5,32 @@ import de.fashionette.utilities.BrowserUtils;
 import de.fashionette.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 public class LoginPageDefs {
 
     LoginPage loginPage = new LoginPage();
 
-    @Then("the user logins with valid credentials")
-    public void theUserLoginsWithValidCredentials() {
+
+
+    @When("the user should be able to login with valid credentials")
+    public void theUserShouldBeAbleToLoginWithValidCredentials() {
+
         String username = ConfigurationReader.get("username");
         String password = ConfigurationReader.get("password");
-        BrowserUtils.waitFor(3);
-        BrowserUtils.waitForVisibility(loginPage.loginIcon,15);
+        BrowserUtils.waitFor(5);
         loginPage.login(username, password);
     }
 
-    @Given("the user should be able to modify the name and the surname of the user")
-    public void theUserShouldBeAbleToModifyTheNameAndTheSurnameOfTheUser() {
+    @Then("verify that {string} message is visible")
+    public void verifyThatMessageIsVisible(String expectedWelcomeMessage) {
 
-            loginPage.modifyCustomerInformation();
-
+        String actualWelcomeMessage = loginPage.welcomeMessage.getText();
+        //System.out.println("actualWelcomeMessage = " + actualWelcomeMessage);
+        //System.out.println("expectedWelcomeMessage = " + expectedWelcomeMessage);
+        Assert.assertTrue(actualWelcomeMessage.contains(expectedWelcomeMessage));
     }
 
-    @Then("verify that after modifying the user should be able to check the changes")
-    public void verifyThatAfterModifyingTheUserShouldBeAbleToCheckTheChanges() {
 
-            loginPage.verifyCustomerInformation();
-            /*BUG*/
-
-    }
 }

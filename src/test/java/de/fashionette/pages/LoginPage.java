@@ -2,6 +2,7 @@ package de.fashionette.pages;
 
 import com.github.javafaker.Faker;
 import de.fashionette.utilities.BrowserUtils;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -20,11 +21,14 @@ public class LoginPage extends BasePage{
     public WebElement loginButton;
 
     public void login (String username, String password){
-        BrowserUtils.waitForVisibility(loginIcon, 15);
+        //BrowserUtils.waitForVisibility(loginIcon, 15);
+        BrowserUtils.waitFor(3);
         loginIcon.click();
-        BrowserUtils.waitForVisibility(emailField, 15);
+        //BrowserUtils.waitForVisibility(emailField, 15);
+        BrowserUtils.waitFor(3);
         emailField.sendKeys(username);
         BrowserUtils.waitForVisibility(passwordField, 15);
+        BrowserUtils.waitFor(3);
         passwordField.sendKeys(password);
         loginButton.click();
     }
@@ -45,7 +49,8 @@ public class LoginPage extends BasePage{
             public WebElement customerInformationSave;
 
     Faker faker = new Faker();
-
+    String expectedNewName = faker.name().firstName();
+    String expectedNewLastName = faker.name().lastName();
 
     public void modifyCustomerInformation(){
 
@@ -57,24 +62,27 @@ public class LoginPage extends BasePage{
 
         BrowserUtils.waitFor(2);
         lastNameField.clear();
-
-        String expectedNewName = faker.name().firstName();
-        System.out.println("newName = " + expectedNewName);
         nameField.sendKeys(expectedNewName);
-
-        String expectedNewLastName = faker.name().lastName();
-        System.out.println("newLastName = " + expectedNewLastName);
         lastNameField.sendKeys(expectedNewLastName);
-
         customerInformationSave.click();
     }
 
-    @FindBy (xpath = "//*[@class='account__content__column account__content__column--customer'][1]//br[1]")
+    @FindBy (xpath = "//*[@class='account__content__column account__content__column--customer'][1]")
     public WebElement customerInformation;
 
     public void verifyCustomerInformation(){
 
+        //BrowserUtils.waitForVisibility(customerInformation,15);
+        BrowserUtils.waitFor(5);
+        String expectedInformation = customerInformation.getText();
+        System.out.println("expectedInformation = " + expectedInformation);
+
 
     }
+
+    @FindBy (xpath = "//div[@class='account__welcome text__center font-size--hero']")
+    public WebElement welcomeMessage;
+
+
 
 }

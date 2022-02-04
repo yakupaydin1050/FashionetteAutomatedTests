@@ -3,6 +3,7 @@ package de.fashionette.step_definitions;
 import de.fashionette.pages.CartPage;
 import de.fashionette.pages.ProductsPage;
 import de.fashionette.utilities.BrowserUtils;
+import de.fashionette.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,30 +16,25 @@ public class CartPageDefs {
     @Given("the user adds a product to the cart")
     public void theUserAddsAProductToTheCart() {
         cartPage.productAdder();
-        cartPage.cartIcon.click();
-        cartPage.homePage();
     }
 
-
-    @Then("the user should be able to visit the cart")
-    public void theUserShouldBeAbleToVisitTheCart() {
-        cartPage.cartIcon.click();
-
+    @And("the user visits the cart")
+    public void theUserVisitsTheCart() {
+        cartPage.visitCart();
     }
 
-    @Given("the user adds a product to the cart without login")
-    public void theUserAddsAProductToTheCartWithoutLogin() {
-        cartPage.productAdder();
+    @Then("verify that current url contains {string}")
+    public void verifyThatCurrentUrlContains(String str) {
+
+        BrowserUtils.waitFor(3);
+        String actualURL = Driver.get().getCurrentUrl();
+        //System.out.println("actualURL = " + actualURL);
+        Assert.assertTrue(actualURL.contains(str));
     }
+    
+    @Then("verify that selected product appeared in the user cart")
+    public void verifyThatSelectedProductAppearedInTheUserCart() {
 
-    @Then("the user applies the valid voucher to the cart")
-    public void theUserAppliesTheValidVoucherToTheCart() {
-        cartPage.applyCoupon();
-    }
-
-    @And("verify that the valid voucher is applied properly")
-    public void verifyThatTheValidVoucherIsAppliedProperly() {
-
-        cartPage.getExpectedPrice();
+        Assert.assertTrue(cartPage.selectedProductImage.isDisplayed());
     }
 }

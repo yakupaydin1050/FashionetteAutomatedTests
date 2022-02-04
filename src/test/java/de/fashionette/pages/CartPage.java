@@ -19,19 +19,16 @@ public class CartPage extends BasePage {
     @FindBy(xpath = "//div[@value='A0167156_36']//span[1]")
     public WebElement selectSize;
 
-    public void productAdder() {
+    public void selectProductSize(){
         selectSize.click();
+    }
+
+    public void productAdder() {
         addToCartButton.click();
     }
 
-    @FindBy(xpath = "//*[@class='header__cart-icon']")
-    public WebElement cartIcon;
-
-    public void homePage() {
-        BrowserUtils.waitForVisibility(fashionetteLogo, 5);
-        fashionetteLogo.click();
-    }
-
+    @FindBy (xpath = "//div[@class='cart-item--img']//img")
+    public WebElement selectedProductImage;
 
     @FindBy(xpath = "(//*[contains(text(),'Voucher')])[1]")
     public WebElement voucherButton;
@@ -68,8 +65,6 @@ public class CartPage extends BasePage {
 
         String voucherPriceText = voucherPrice.getText();
         System.out.println("voucherPriceText = " + voucherPriceText);
-
-
 
         String expectedPrice = subTotal.getText();
         System.out.println("expectedPrice = " + expectedPrice);
