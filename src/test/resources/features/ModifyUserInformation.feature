@@ -1,5 +1,5 @@
-
-Feature: User should be able to modify user information
+@scenario02
+Feature: The user should be able to modify user information
 
   Background:
     Given the user is on the home page

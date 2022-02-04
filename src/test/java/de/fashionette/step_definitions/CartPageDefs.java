@@ -3,6 +3,7 @@ package de.fashionette.step_definitions;
 import de.fashionette.pages.CartPage;
 import de.fashionette.pages.ProductsPage;
 import de.fashionette.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -19,9 +20,25 @@ public class CartPageDefs {
     }
 
 
-    @Then("the user visits the cart after login")
-    public void theUserVisitsTheCartAfterLogin() {
+    @Then("the user should be able to visit the cart")
+    public void theUserShouldBeAbleToVisitTheCart() {
         cartPage.cartIcon.click();
 
+    }
+
+    @Given("the user adds a product to the cart without login")
+    public void theUserAddsAProductToTheCartWithoutLogin() {
+        cartPage.productAdder();
+    }
+
+    @Then("the user applies the valid voucher to the cart")
+    public void theUserAppliesTheValidVoucherToTheCart() {
+        cartPage.applyCoupon();
+    }
+
+    @And("verify that the valid voucher is applied properly")
+    public void verifyThatTheValidVoucherIsAppliedProperly() {
+
+        cartPage.getExpectedPrice();
     }
 }

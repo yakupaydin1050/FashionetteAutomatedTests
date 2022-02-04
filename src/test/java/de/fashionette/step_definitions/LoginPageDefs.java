@@ -12,7 +12,6 @@ public class LoginPageDefs {
 
     @Then("the user logins with valid credentials")
     public void theUserLoginsWithValidCredentials() {
-
         String username = ConfigurationReader.get("username");
         String password = ConfigurationReader.get("password");
         BrowserUtils.waitFor(3);
@@ -31,6 +30,7 @@ public class LoginPageDefs {
     public void verifyThatAfterModifyingTheUserShouldBeAbleToCheckTheChanges() {
 
             loginPage.verifyCustomerInformation();
+            /*BUG*/
 
     }
 }
