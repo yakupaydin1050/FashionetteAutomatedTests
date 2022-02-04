@@ -1,0 +1,2 @@
+# FashionetteAutomatedTests
+FashionetteAutomatedTests
