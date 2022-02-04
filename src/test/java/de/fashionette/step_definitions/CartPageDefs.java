@@ -2,6 +2,7 @@ package de.fashionette.step_definitions;
 
 import de.fashionette.pages.CartPage;
 import de.fashionette.pages.ProductsPage;
+import de.fashionette.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -14,6 +15,7 @@ public class CartPageDefs {
     public void theUserAddsAProductToTheCart() {
         cartPage.productAdder();
         cartPage.cartIcon.click();
+        cartPage.homePage();
     }
 
 
