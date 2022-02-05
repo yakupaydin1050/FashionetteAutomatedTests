@@ -78,7 +78,6 @@ Feature: Login Page Functionality.
       | yakupaydin1050gmail.com   | asdf4a6546789 |
       | yakup@aydin1050@gmail.com | ewrwea9875646 |
 
-
   @login
   Scenario: Show password and Hide password functionality
     When the user clicks "Show password" on the login page
