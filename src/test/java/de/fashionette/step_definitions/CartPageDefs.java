@@ -37,4 +37,36 @@ public class CartPageDefs {
 
         Assert.assertTrue(cartPage.selectedProductImage.isDisplayed());
     }
+
+    @And("the user clicks {string} link")
+    public void theUserClicksLink(String str) {
+
+        cartPage.clickVoucher(str);
+    }
+
+
+    @And("the user applies {string} voucher to the coupon field")
+    public void theUserAppliesVoucherToTheCouponField(String validVoucher) {
+
+        cartPage.applyValidVoucher(validVoucher);
+    }
+
+    @And("the user clicks {string} button")
+    public void theUserClicksButton(String str) {
+        cartPage.clickRedeemButton(str);
+    }
+
+    @Then("verify that the valid voucher is applied properly")
+    public void verifyThatTheValidVoucherIsAppliedProperly() {
+
+        Assert.assertTrue(cartPage.cancelIcon.isEnabled());
+        Assert.assertTrue(cartPage.reducePrice.isEnabled());
+    }
+
+
+    @Then("verify that {string} is greater than TOTAL amount")
+    public void verifyThatIsGreaterThanTOTALAmount(String subtotal) {
+
+        Assert.assertTrue(cartPage.verifyDiscount(subtotal));
+    }
 }
