@@ -8,8 +8,12 @@ Feature: The user should be able to add a product and login with valid credentia
     And the user selects product details
     And the user adds a product to the cart
 
+
   @scenario01
   Scenario: Add a product to the cart and login
+    When the user should be able to navigate to login page
+    Then verify that current url contains "login"
+    Then the user should be able to see "WELCOME TO FASHIONETTE!" message
     When the user should be able to login with valid credentials
     Then verify that "welcome to your account." message is visible
     And the user visits the cart

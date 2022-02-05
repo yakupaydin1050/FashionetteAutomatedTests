@@ -40,20 +40,20 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//*[@class='account__content__column account__content__column--customer'][1]")
     public WebElement customerInformation;
 
+    @FindBy (xpath = "//h1[text()='Welcome to fashionette!']")
+    public WebElement loginPageWelcomeMessage;
+
     @FindBy (xpath = "//div[@class='login__errortext login--modal__response-error']")
     public WebElement loginErrorMessage;
 
-    @FindBy (xpath = "//div[@id='password-error']")
-    public WebElement passwordError;
+    @FindBy (xpath = "//div[contains(text(),'password')]")
+    public WebElement passwordErrorMessage;
 
     @FindBy (xpath = "//div[@id='email-error']")
     public WebElement emailError;
 
     public void login(String username, String password) {
-        //BrowserUtils.waitForVisibility(loginIcon, 15);
-        BrowserUtils.waitFor(3);
-        loginIcon.click();
-        //BrowserUtils.waitForVisibility(emailField, 15);
+
         BrowserUtils.waitFor(3);
         emailField.sendKeys(username);
         BrowserUtils.waitForVisibility(passwordField, 15);
@@ -96,6 +96,11 @@ public class LoginPage extends BasePage {
         Assert.assertEquals(ExpectedFirstNameAndLastName, ActualFirstNameAndLastName);
 
     }
+
+
+
+
+
 
 
 }
