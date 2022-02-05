@@ -16,7 +16,6 @@ public class LoginPageDefs {
     LoginPage loginPage = new LoginPage();
 
 
-
     @When("the user should be able to login with valid credentials")
     public void theUserShouldBeAbleToLoginWithValidCredentials() {
 
@@ -39,13 +38,13 @@ public class LoginPageDefs {
     @Then("the user clicks {string} menu")
     public void theUserClicksMenu(String str) {
 
-            loginPage.navigateUserInformationMenus(str);
+        loginPage.navigateUserInformationMenus(str);
 
     }
 
     @Then("the user clicks {string}")
     public void theUserClicks(String str) {
-            loginPage.editAndSaveMenus(str);
+        loginPage.editAndSaveMenus(str);
     }
 
     @Then("the user should be able to modify the name and the surname of the user")
@@ -84,7 +83,7 @@ public class LoginPageDefs {
         String actualLoginErrorMessage = loginPage.loginErrorMessage.getText();
         System.out.println("actualLoginErrorMessage = " + actualLoginErrorMessage);
         System.out.println("expectedLoginErrorMessage = " + expectedLoginErrorMessage);
-        Assert.assertEquals(expectedLoginErrorMessage,actualLoginErrorMessage);
+        Assert.assertEquals(expectedLoginErrorMessage, actualLoginErrorMessage);
 
     }
 
@@ -95,9 +94,52 @@ public class LoginPageDefs {
         System.out.println("expectedPasswordErrorMessage = " + expectedPasswordErrorMessage);
         String actualPasswordErrorMessage = loginPage.passwordErrorMessage.getText();
         System.out.println("actualPasswordErrorMessage = " + actualPasswordErrorMessage);
-        Assert.assertEquals(expectedPasswordErrorMessage,actualPasswordErrorMessage);
-        }
+        Assert.assertEquals(expectedPasswordErrorMessage, actualPasswordErrorMessage);
+    }
 
+
+    @Then("error {string} message should be displayed {string}")
+    public void errorMessageShouldBeDisplayed(String str, String expectedErrorMessage) {
+
+        System.out.println("expectedErrorMessage = " + expectedErrorMessage);
+        System.out.println("actualErrorMessage = " + loginPage.actualErrorMessage(str));
+        Assert.assertEquals(expectedErrorMessage, loginPage.actualErrorMessage(str));
+
+    }
+
+
+    @When("the user clicks {string} on the login page")
+    public void theUserClicksOnTheLoginPage(String str) {
+        loginPage.clickHideAndShowPassword(str);
+    }
+
+
+    @Then("verify that password is visible")
+    public void verifyThatPasswordIsVisible() {
+        Assert.assertTrue(loginPage.passwordVisible());
+    }
+
+
+    @Then("verify that password is invisible")
+    public void verifyThatPasswordIsInvisible() {
+        Assert.assertTrue(loginPage.passwordInvisible());
+    }
+
+    @Then("verify that the user should be able to see {string} page")
+    public void verifyThatTheUserShouldBeAbleToSeePage(String expectedMessage) {
+        Assert.assertEquals(expectedMessage, loginPage.forgotYourPasswordText());
+    }
+
+
+    @When("the user enters email address {string}")
+    public void theUserEntersEmailAddress(String email) {
+        loginPage.setForgotEmailField(email);
+    }
+
+    @Then("the message {string} should be displayed")
+    public void theMessageShouldBeDisplayed(String expectedMessage) {
+        Assert.assertEquals(expectedMessage, loginPage.getForgotEmailMessage());
+    }
 
 
 }
