@@ -1,10 +1,11 @@
-@scenario02
+@smoke
 Feature: The user should be able to modify user information
 
   Background:
     Given the user is on the home page
     Then verify that homepage is accessible and full loaded
 
+    @scenario02
     Scenario: Modify user information
       When the user should be able to login with valid credentials
       Then verify that "welcome to your account." message is visible

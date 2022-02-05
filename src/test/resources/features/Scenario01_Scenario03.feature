@@ -1,5 +1,5 @@
-
-Feature: The user should be able to add a product and login with valid credentials
+@smoke
+Feature: The user should be able to add a product and login with valid credentials and apply a voucher
 
   Background:
     Given the user is on the home page
