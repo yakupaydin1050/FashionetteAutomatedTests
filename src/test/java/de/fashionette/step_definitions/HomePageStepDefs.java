@@ -2,6 +2,7 @@ package de.fashionette.step_definitions;
 
 import de.fashionette.pages.CartPage;
 import de.fashionette.pages.HomePage;
+import de.fashionette.pages.LoginPage;
 import de.fashionette.pages.ProductsPage;
 import de.fashionette.utilities.BrowserUtils;
 import de.fashionette.utilities.ConfigurationReader;
@@ -16,6 +17,7 @@ public class HomePageStepDefs {
     HomePage homePage = new HomePage();
     ProductsPage productsPage = new ProductsPage();
     CartPage cartPage = new CartPage();
+    LoginPage loginPage = new LoginPage();
 
     @Given("the user is on the home page")
     public void the_user_is_on_the_home_page() {
@@ -32,6 +34,8 @@ public class HomePageStepDefs {
         String expectedTitle = "fashionette | Buy designer handbags, shoes & accessories online";
         String actualTitle = Driver.get().getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
+
+        Assert.assertTrue(loginPage.mainLogo.isEnabled());
     }
 
 

@@ -40,6 +40,15 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//*[@class='account__content__column account__content__column--customer'][1]")
     public WebElement customerInformation;
 
+    @FindBy (xpath = "//div[@class='login__errortext login--modal__response-error']")
+    public WebElement loginErrorMessage;
+
+    @FindBy (xpath = "//div[@id='password-error']")
+    public WebElement passwordError;
+
+    @FindBy (xpath = "//div[@id='email-error']")
+    public WebElement emailError;
+
     public void login(String username, String password) {
         //BrowserUtils.waitForVisibility(loginIcon, 15);
         BrowserUtils.waitFor(3);
@@ -52,8 +61,6 @@ public class LoginPage extends BasePage {
         passwordField.sendKeys(password);
         loginButton.click();
     }
-
-
 
     Faker faker = new Faker();
     String expectedNewName = faker.name().firstName();
@@ -87,7 +94,6 @@ public class LoginPage extends BasePage {
         System.out.println("ExpectedFirstNameAndLastName = " + ExpectedFirstNameAndLastName);
 
         Assert.assertEquals(ExpectedFirstNameAndLastName, ActualFirstNameAndLastName);
-
 
     }
 

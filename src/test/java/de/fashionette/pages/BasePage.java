@@ -28,6 +28,13 @@ public abstract class BasePage {
     @FindBy(xpath = "//td[@class='text__right typography__type-2--bold']")
     public WebElement cartTotalPrice;
 
+    @FindBy (xpath = "//img[@alt='fashionette']")
+    public WebElement mainLogo;
+
+    @FindBy (xpath = "//*[text()='Show password']")
+    public WebElement showAndHidePassword;
+
+
     public void visitCart() {
         cartIcon.click();
     }
