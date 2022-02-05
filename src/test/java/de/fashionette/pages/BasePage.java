@@ -71,6 +71,18 @@ public abstract class BasePage {
             return false;
         }
     }
+
+
+    public void navigateUserInformationMenus(String str) {
+        WebElement personalData = Driver.get().findElement(By.xpath("//a[normalize-space()='"+str+"']"));
+        personalData.click();
+    }
+
+    public void editAndSaveMenus(String str){
+        WebElement customerInformationEditandSave = Driver.get().findElement(By.xpath("(//*[text()='"+str+"'])[1]"));
+        customerInformationEditandSave.click();
+    }
+
 }
 
 

@@ -33,4 +33,27 @@ public class LoginPageDefs {
     }
 
 
+    @Then("the user clicks {string} menu")
+    public void theUserClicksMenu(String str) {
+
+            loginPage.navigateUserInformationMenus(str);
+
+    }
+
+    @Then("the user clicks {string}")
+    public void theUserClicks(String str) {
+            loginPage.editAndSaveMenus(str);
+    }
+
+
+    @Then("the user should be able to modify the name and the surname of the user")
+    public void theUserShouldBeAbleToModifyTheNameAndTheSurnameOfTheUser() {
+
+        loginPage.modifyCustomerInformation();
+    }
+
+    @Then("verify that name and surname have been correctly saved")
+    public void verifyThatNameAndSurnameHaveBeenCorrectlySaved() {
+        loginPage.verifyCustomerInformation();
+    }
 }
