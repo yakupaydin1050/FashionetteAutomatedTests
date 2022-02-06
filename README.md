@@ -56,6 +56,7 @@ To generate HTML report use  `mvn test -Dcucumber="–plugin html:target/default
 To generate a JSON report Use `mvn test -Dcucumber="–plugin json:target/cucumber.json"`
 
 ## Jira-XRAY Integration
+A connection is provided by importing the cucumber.json file created by cucumber to the Test Execution, which is linked to the Test Case and Bug Ticket created in Jira-XRAY.
 
 ## Running from Jenkins
 
