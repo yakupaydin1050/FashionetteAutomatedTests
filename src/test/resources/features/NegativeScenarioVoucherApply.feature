@@ -16,6 +16,7 @@ Feature: Apply a invalid Voucher
     And the user clicks "redeem" button
     Then verify that the user should be able to see invalid voucher message
       | Your voucher "yakupaydin" is not valid |
-    Then verify that "subtotal" is greater than TOTAL amount
+    #Then verify that "subtotal" is greater than TOTAL amount
+    Then verify that "subtotal" equals TOTAL amount
 
 

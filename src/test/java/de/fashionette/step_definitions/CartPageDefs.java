@@ -97,4 +97,10 @@ public class CartPageDefs {
     }
 
 
+    @Then("verify that {string} equals TOTAL amount")
+    public void verifyThatEqualsTOTALAmount(String subtotal) {
+        Assert.assertFalse(cartPage.verifyDiscount(subtotal));
+        log.info("I cast the string value as a double.");
+        log.info("if the price of product equals the total price, a discount is not made.");
+    }
 }

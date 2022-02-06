@@ -30,10 +30,6 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     break;
-                case "chrome-none":
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver(new ChromeOptions().setPageLoadStrategy(PageLoadStrategy.NONE));
-                    break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
@@ -63,8 +59,6 @@ public class Driver {
                     driver = new SafariDriver();
                     break;
             }
-
-
 
         }
 
