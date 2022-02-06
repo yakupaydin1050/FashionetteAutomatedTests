@@ -5,21 +5,21 @@
 
 ## Summary of the task
 
-As stated in the task, after going to the homepage, the user selects a product and logs in to the page. After logging in, it checks the product in the shopping cart and performs other functionalities. In addition, the customer can make a discount on the product she/he applied with a valid voucher. However, the customers can change also their information (Title, First Name, Last Name, Phone Number, etc.). 
+As stated in the task, after navigate to the homepage, the user selects a product and logs in to the page. After logging in, the user checks the product in the shopping cart. In addition, the customer can make a discount on the product she/he applied with a valid voucher. The user can change also personal data information (Title, First Name, Last Name, Phone Number etc.). 
 
 The purpose of this task is to automate tests over existing scenarios.
 
-On the other hand, negative tests for the given scenario are developed and automated.
+Additionally, negative tests for the given scenario are developed and automated.
 
 ## Selenium-Cucumber-Java
 
-This task contains a collection of sample `selenium-cucumber-java` projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v.5.7.0) BDD framework with Java as programming language. It generate JSON reports as well. It also generate `screen shots` for tests. 
+This task contains a collection of sample `selenium-cucumber-java` projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v.5.7.0) BDD framework with Java as programming language. It generates both cucumber reports, and `screen shots` for tests. 
 
 ## Installation
 
 1. JDK 1.8+ (make sure Java class path is set) 
 2. IntelliJ
-3. IntelliJ Plugins for
+3. Project Dependencies for
     - Maven
     - Cucumber v.5.7.0
     - Selenium v.4.0.0 
@@ -56,14 +56,13 @@ To generate HTML report use  `mvn test -Dcucumber="–plugin html:target/default
 To generate a JSON report Use `mvn test -Dcucumber="–plugin json:target/cucumber.json"`
 
 ## Jira-XRAY Integration
-A connection is provided by importing the cucumber.json file created by cucumber to the Test Execution, which is linked to the Test Case and Bug Ticket created in Jira-XRAY.
+A connection is provided by importing the `cucumber.json` file created by cucumber to the Test Execution, which is linked to the Test Case and Bug Ticket created in Jira-XRAY.
 
 ## Running from Jenkins
 - Source Code Management - Git 
 - Repository [URL](https://github.com/yakupaydin1050/FashionetteAutomatedTests)
 - Credentials - Valid credential is in the TASK document in the DOC folder.
 - Branch Specifier - */master
-- 
 
 ### Automation scripts using BDD approach - Cucumber-Java
 
