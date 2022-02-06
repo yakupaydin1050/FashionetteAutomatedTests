@@ -5,10 +5,7 @@
 
 ## Summary of the task
 
-
-As stated in the task, after going to the homepage, the user selects a product and logs in to the page. After logging in, it checks the product in the shopping cart and performs other operations. 
-In addition, the customer can make a discount on the product she/he applied with a valid voucher. 
-However, the customers can change also their information (Title, First Name, Last Name, Phone Number, etc.). 
+As stated in the task, after going to the homepage, the user selects a product and logs in to the page. After logging in, it checks the product in the shopping cart and performs other operations. In addition, the customer can make a discount on the product she/he applied with a valid voucher. However, the customers can change also their information (Title, First Name, Last Name, Phone Number, etc.). 
 
 The purpose of this task is to automate tests over existing scenarios.
 
@@ -28,6 +25,8 @@ This task contains a collection of sample `selenium-cucumber-java` projects and 
     - Selenium v.4.0.0 
     - Web Driver Manager v.4.4.3 (Bonigarcia)
     - Cucumber JUnit v.5.7.0
+    - Logger slf4j-simple v.1.7.21
+    - Java Faker v.1.0.2
 4. Browser driver (make sure you have your desired browser driver and Configuration files' path is set)
 
 ## Framework set up
@@ -35,8 +34,14 @@ Fork / Clone repository from [here](https://github.com/yakupaydin1050/Fashionett
 it up in your local workspace.
 
 ## Executing Task
+Open terminal (MAC OSX) or command prompt / power shell (for windows OS) and navigate to the project directory
+type `mvn clean test` command to run features. With this command it will invoke the default Google Chrome browser and will
+execute the tests.
 
-
+- To run specific feature if you have multiple feature files use,
+  `mvn test @Scenario02`
+  `mvn test -Dcucumber="src/test/resources/features/Scenario02.feature"`
+ 
 
 ## Reporters
 Once you ran your tests you can generate the various types of reports. This framework `selenium-cucumber-java` uses
@@ -44,20 +49,17 @@ several different types of test reporters to communicate pass/failure.
 
 ##### HTML Report:
 
-To generate HTML report use  `mvn test -Dcucumber.options="–plugin html:target/default-html.html"`
+To generate HTML report use  `mvn test -Dcucumber="–plugin html:target/default-html.html"`
 
 ##### JSON Report:
 
-To generate a JSON report Use `mvn test -Dcucumber.options="–plugin json:target/cucumber.json"`
-
-##### TEXT Report:
-
-To generate a text report Use `mvn test -Dcucumber.options="–plugin rerun:target/rerun.txt"`
+To generate a JSON report Use `mvn test -Dcucumber="–plugin json:target/cucumber.json"`
 
 ### Automation scripts using BDD approach - Cucumber-Java
 
 There are already many predefined StepDefinitions which is packaged under `de/fashionette/step_definitions`.
 Tests are written in the Cucumber framework using the Gherkin Syntax.
+
 ##### A typical test will look similar to this:
 ```
 Feature: The user should be able to add a product and login with valid credentials and apply a voucher
