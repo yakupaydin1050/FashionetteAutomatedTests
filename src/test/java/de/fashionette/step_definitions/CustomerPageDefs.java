@@ -86,4 +86,9 @@ public class CustomerPageDefs {
         String expectedPhoneNumberMessage = "The \"phone number\" field is required.";
         Assert.assertEquals(expectedPhoneNumberMessage, customerPage.getPhoneNumberErrorMessage());
     }
+
+    @Then("verify that the last name should consist of letters only")
+    public void verifyThatTheLastNameShouldConsistOfLettersOnly() {
+        Assert.assertTrue(customerPage.lastNameError.isDisplayed(), "The last name must consist of only letter");
+    }
 }

@@ -46,6 +46,15 @@ Feature: Modify Personal Data Functionality
       | qwertyukjhgfdsazxcvbnmkjhgfdsa |
 
   @Customer
+    @Customer
+  Scenario Outline: The last name should consist of letters
+    Given the user fills last name field "<lastName>"
+    Then verify that the last name should consist of letters only
+    Examples:
+      | lastName |
+      | 123456   |
+
+  @Customer
   Scenario Outline: The last name must be
     Given the user fills last name field "<lastName>"
     And the user clicks "Save"

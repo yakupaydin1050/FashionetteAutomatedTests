@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-    @Before //it must be coming from cucumber.java
+    @Before
     public void setUp() {
 
         System.out.println("##### setup! start #####\n");
@@ -29,6 +29,6 @@ public class Hooks {
             System.out.println("Test is completed!");
         }
         System.out.println("##### THE END #####");
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 }
