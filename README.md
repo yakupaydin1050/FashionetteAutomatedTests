@@ -12,9 +12,10 @@ This task contains a collection of sample `selenium-cucumber-java` projects and 
 2. IntelliJ
 3. IntelliJ Plugins for
     - Maven
-    - Cucumber
-    - Selenium 
-    - Web Driver Manager (Bonigarcia)
+    - Cucumber v.5.7.0
+    - Selenium v.4.0.0 
+    - Web Driver Manager v.4.4.3 (Bonigarcia)
+    - Cucumber JUnit v.5.7.0
 4. Browser driver (make sure you have your desired browser driver and Configuration files' path is set)
 
 ## Framework set up
@@ -23,11 +24,47 @@ it up in your local workspace.
 
 ## Executing Task
 
-## Built with
+## Reporters
+Once you ran your tests you can generate the various types of reports. This framework `selenium-cucumber-java` uses
+several different types of test reporters to communicate pass/failure.
 
-### Testing Framework and Tooling
+##### HTML Report:
 
-### Libraries
+To generate HTML report use  `mvn test -Dcucumber.options="–plugin html:target/default-html.html"`
+
+##### JSON Report:
+
+To generate a JSON report Use `mvn test -Dcucumber.options="–plugin json:target/cucumber.json"`
+
+##### TEXT Report:
+
+To generate a text report Use `mvn test -Dcucumber.options="–plugin rerun:target/rerun.txt"`
+
+### Automation scripts using BDD approach - Cucumber-Java
+
+There are already many predefined StepDefinitions which is packaged under `de/fashionette/step_definitions`.
+Tests are written in the Cucumber framework using the Gherkin Syntax.
+##### A typical test will look similar to this:
+
+Feature: The user should be able to add a product and login with valid credentials and apply a voucher
+Background:
+    Given the user is on the home page
+    Then verify that homepage is accessible and full loaded
+    And the user should be able to select a product
+    And the user selects product details
+    And the user adds a product to the cart
+
+  Scenario: Add a product to the cart and login
+    When the user should be able to navigate to login page
+    Then verify that current url contains "login"
+    Then the user should be able to see "WELCOME TO FASHIONETTE!" message
+    When the user should be able to login with valid credentials
+    Then verify that "welcome to your account." message is visible
+    And the user visits the cart
+    Then verify that current url contains "cart"
+    Then verify that selected product appeared in the user cart
+
+
 
 ##
 
