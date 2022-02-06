@@ -5,7 +5,7 @@
 
 ## Summary of the task
 
-As stated in the task, after going to the homepage, the user selects a product and logs in to the page. After logging in, it checks the product in the shopping cart and performs other operations. In addition, the customer can make a discount on the product she/he applied with a valid voucher. However, the customers can change also their information (Title, First Name, Last Name, Phone Number, etc.). 
+As stated in the task, after going to the homepage, the user selects a product and logs in to the page. After logging in, it checks the product in the shopping cart and performs other functionalities. In addition, the customer can make a discount on the product she/he applied with a valid voucher. However, the customers can change also their information (Title, First Name, Last Name, Phone Number, etc.). 
 
 The purpose of this task is to automate tests over existing scenarios.
 
