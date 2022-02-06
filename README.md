@@ -59,7 +59,11 @@ To generate a JSON report Use `mvn test -Dcucumber="–plugin json:target/cucumb
 A connection is provided by importing the cucumber.json file created by cucumber to the Test Execution, which is linked to the Test Case and Bug Ticket created in Jira-XRAY.
 
 ## Running from Jenkins
-
+- Source Code Management - Git 
+- Repository [URL](https://github.com/yakupaydin1050/FashionetteAutomatedTests)
+- Credentials - Valid credential is in the TASK document in the DOC folder.
+- Branch Specifier - */master
+- 
 
 ### Automation scripts using BDD approach - Cucumber-Java
 
