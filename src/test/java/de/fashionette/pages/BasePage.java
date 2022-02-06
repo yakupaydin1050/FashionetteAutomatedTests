@@ -13,26 +13,17 @@ public abstract class BasePage {
         PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy(xpath = "//img[@alt='fashionette']")
-    public WebElement fashionetteLogo;
-
     @FindBy(xpath = "//*[@class='header__cart-icon']")
     public WebElement cartIcon;
 
     @FindBy(xpath = "//input[@placeholder='Coupon']")
     public WebElement couponField;
 
-    @FindBy(xpath = "//td[@class='text__right typography__type-2 cart__subtotal']")
-    public WebElement subTotal;
-
     @FindBy(xpath = "//td[@class='text__right typography__type-2--bold']")
     public WebElement cartTotalPrice;
 
     @FindBy (xpath = "//img[@alt='fashionette']")
     public WebElement mainLogo;
-
-    @FindBy (xpath = "//*[text()='Show password']")
-    public WebElement showAndHidePassword;
 
 
     public void visitCart() {
@@ -89,6 +80,7 @@ public abstract class BasePage {
         WebElement customerInformationEditandSave = Driver.get().findElement(By.xpath("(//*[text()='"+str+"'])[1]"));
         customerInformationEditandSave.click();
     }
+
 
 }
 
