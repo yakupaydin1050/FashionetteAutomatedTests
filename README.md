@@ -1,5 +1,6 @@
 # FashionetteAutomatedTests
 
+![Fashionette](https://github.com/yakupaydin1050/FashionetteAutomatedTests/blob/master/src/test/resources/images/logo_Fashionette.png)
 
 #Titles and internal titles
 
