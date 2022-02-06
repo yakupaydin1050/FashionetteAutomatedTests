@@ -4,7 +4,15 @@
 [fashionette | Buy designer handbags, shoes & accessories online ](https://www.fashionette.co.uk/)
 
 ## Summary of the task
-This task contains a collection of sample `selenium-cucumber-java` projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v.5.7.0) BDD framework with Java as programming language. It generate JSON reporters as well. It also generate `screen shots` for tests.
+This task contains a collection of sample `selenium-cucumber-java` projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v.5.7.0) BDD framework with Java as programming language. It generate JSON reports as well. It also generate `screen shots` for tests. 
+
+As stated in the task, after going to the homepage, the user selects a product and logs in to the page. After logging in, it checks the product in the shopping cart and performs other operations. 
+In addition, the customer can make a discount on the product she/he applied with a valid voucher. 
+However, the customers can change also their information (Title, First Name, Last Name, Phone Number, etc.). 
+
+The purpose of this task is to automate tests over existing scenarios.
+
+On the other hand, negative tests for the given scenario are developed and automated.
 
 ## Installation
 
@@ -45,7 +53,7 @@ To generate a text report Use `mvn test -Dcucumber.options="–plugin rerun:targ
 There are already many predefined StepDefinitions which is packaged under `de/fashionette/step_definitions`.
 Tests are written in the Cucumber framework using the Gherkin Syntax.
 ##### A typical test will look similar to this:
-
+```
 Feature: The user should be able to add a product and login with valid credentials and apply a voucher
 Background:
     Given the user is on the home page
@@ -63,12 +71,13 @@ Background:
     And the user visits the cart
     Then verify that current url contains "cart"
     Then verify that selected product appeared in the user cart
+```
+
+
+### The Page Object Model Design Pattern
 
 
 
-##
-
-##
 
 
 
