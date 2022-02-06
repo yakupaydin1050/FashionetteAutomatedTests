@@ -38,9 +38,9 @@ Open terminal (MAC OSX) or command prompt / power shell (for windows OS) and nav
 type `mvn clean test` command to run features. With this command it will invoke the default Google Chrome browser and will
 execute the tests.
 
-- To run specific feature if you have multiple feature files use,
-  `mvn test @Scenario02`
-  `mvn test -Dcucumber="src/test/resources/features/Scenario02.feature"`
+- To run specific feature if you have multiple feature files use, <br/>
+  `mvn test @Scenario02` <br/>
+  `mvn test -Dcucumber="src/test/resources/features/Scenario02.feature"` <br/>
  
 
 ## Reporters
@@ -80,14 +80,5 @@ Background:
     Then verify that current url contains "cart"
     Then verify that selected product appeared in the user cart
 ```
-
-
-### The Page Object Model Design Pattern
-
-
-
-
-
-
 
 
