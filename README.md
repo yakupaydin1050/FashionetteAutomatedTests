@@ -55,6 +55,11 @@ To generate HTML report use  `mvn test -Dcucumber="–plugin html:target/default
 
 To generate a JSON report Use `mvn test -Dcucumber="–plugin json:target/cucumber.json"`
 
+## Jira-XRAY Integration
+
+## Running from Jenkins
+
+
 ### Automation scripts using BDD approach - Cucumber-Java
 
 There are already many predefined StepDefinitions which is packaged under `de/fashionette/step_definitions`.
