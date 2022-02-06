@@ -28,13 +28,12 @@ public class CartPage extends BasePage {
     @FindBy (xpath = "//i[@class='icon icon--inline icon--cross']")
     public WebElement cancelIcon;
 
+    @FindBy (xpath = "//*[contains(text(),'Your voucher')]")
+    public WebElement voucherErrorMessage;
 
-
-
-
-
-
-
+    public String getVoucherErrorMessage(){
+        return voucherErrorMessage.getText();
+    }
 
     public void selectProductSize(){
         selectSize.click();

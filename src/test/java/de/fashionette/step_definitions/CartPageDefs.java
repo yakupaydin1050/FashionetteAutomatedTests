@@ -9,6 +9,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
+import java.util.List;
+
 public class CartPageDefs {
 
     CartPage cartPage = new CartPage();
@@ -69,4 +71,14 @@ public class CartPageDefs {
 
         Assert.assertTrue(cartPage.verifyDiscount(subtotal));
     }
+
+
+
+    @Then("verify that the user should be able to see invalid voucher message")
+    public void verifyThatTheUserShouldBeAbleToSeeInvalidVoucherMessage(String voucherErrorMessage) {
+
+            Assert.assertEquals(voucherErrorMessage, cartPage.getVoucherErrorMessage());
+    }
+
+
 }
