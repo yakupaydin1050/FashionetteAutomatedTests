@@ -4,7 +4,7 @@
 [fashionette | Buy designer handbags, shoes & accessories online ](https://www.fashionette.co.uk/)
 
 ## Summary of the task
-This task contains a collection of sample `selenium-cucumber-java` projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v.5.7.0) BDD framework with Java as programming language. It generate JSON reports as well. It also generate `screen shots` for tests. 
+
 
 As stated in the task, after going to the homepage, the user selects a product and logs in to the page. After logging in, it checks the product in the shopping cart and performs other operations. 
 In addition, the customer can make a discount on the product she/he applied with a valid voucher. 
@@ -13,6 +13,10 @@ However, the customers can change also their information (Title, First Name, Las
 The purpose of this task is to automate tests over existing scenarios.
 
 On the other hand, negative tests for the given scenario are developed and automated.
+
+## Selenium-Cucumber-Java
+
+This task contains a collection of sample `selenium-cucumber-java` projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v.5.7.0) BDD framework with Java as programming language. It generate JSON reports as well. It also generate `screen shots` for tests. 
 
 ## Installation
 
@@ -31,6 +35,8 @@ Fork / Clone repository from [here](https://github.com/yakupaydin1050/Fashionett
 it up in your local workspace.
 
 ## Executing Task
+
+
 
 ## Reporters
 Once you ran your tests you can generate the various types of reports. This framework `selenium-cucumber-java` uses
